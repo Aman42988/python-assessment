@@ -1,13 +1,14 @@
 name: Create a comment on new issues
 
 on:
-	issues:
-	types: [opened]
+  issues:
+    types: [opened]
 
 jobs:
-	comment-with-action:
-		runs-on: ubuntu-latest
-		steps:	
-			- name: "Dumpt Github Context
-			  run: echo '${{ toJSON(github.event) }}' | jq
-			  shell: bash
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:	
+      - name: "Dump Github Context"
+        run: echo '${{ toJSON(github.event) }}' | jq
+        shell: bash
+
